@@ -151,17 +151,30 @@
   border: 1px darkgreen solid;
   margin: 0.5rem;
   align-self: flex-end;
-  /* position: relative;
-  z-index: 1;
-  bottom:3rem;
-  left:20rem; */
 }
 
 .lightbulb{
-  /* margin: 0.1rem 0.5rem 0 0; */
   height: 2rem;
 }
 
-.item-container {
+.item-container {  
+  align-self: flex-end;
+  justify-self: center;
   width: 100%;
+  font-size: 0.8rem;
+  margin-bottom: 10%;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .products {
+    grid-template-columns: 8vh 8vh 8vh;
+    grid-template-rows:  auto auto;
+    font-size: 1rem;
+    justify-content: space-evenly;
+
+  }
+
+  /* Adjust other specific styles for small screens */
 }
