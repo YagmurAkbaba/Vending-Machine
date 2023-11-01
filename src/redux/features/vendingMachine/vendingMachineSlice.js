@@ -224,5 +224,5 @@ export const vendingMachineSlice = createSlice({
 });
 
 export const {collectMoney, insertMoney, setSelectedItem, cancelRequest, getChange, getTotalChange, fill,
-     increaseTotalEnergyConsumption, collectItem, resetVendingMachine, restart} = vendingMachineSlice.actions
-export default vendingMachineSlice.reducer
+     increaseTotalEnergyConsumption, collectItem, resetVendingMachine, restart} = vendingMachineSlice.actions;
+export default vendingMachineSlice.reducer;

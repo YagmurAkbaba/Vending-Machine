@@ -10,8 +10,8 @@ import { city } from './Data';
 function App() {
 
   // global variables accross the entire project
-  const {products, selectedItem, insertedAmount, change, totalChange, totalAmountInMachine,
-     isInProgress, totalEnergyConsumption, soldItem, isMachineAvailable} = useSelector((store) => store.vendingMachine);
+  const {products, selectedItem, insertedAmount, change, totalChange, totalAmountInMachine, 
+    isInProgress, totalEnergyConsumption, soldItem, isMachineAvailable} = useSelector((store) => store.vendingMachine);
 
   const dispatch = useDispatch();
 
