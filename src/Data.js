@@ -1,9 +1,11 @@
-export const storeData = [
+// stores data
+
+export const storeData = [ // products data
     {
         name:"Water",
         price: 25,
         image:'/images/water.png',
-        amount: 1
+        amount: 10
     },
     {
         name:"Coke",
@@ -19,4 +21,4 @@ export const storeData = [
     }
 ];
 
-export const city = "Antalya";
+export const city = "Antalya"; // city information

@@ -25,11 +25,15 @@ function App() {
   const [temperature, setTemperature] = useState(0);
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isLightOpen, setIsLightOpen] = useState(false);
+  const [isLightAllowed, setIsLightAllowed] = useState(true);
 
 useEffect(() => {
   if(totalEnergyConsumption>5){ // if energy consumption exceeds 5, turn of the light 
     setIsLightOpen(false);
+    setIsLightAllowed(false);
     console.log("Light is turned off to save energy!");
+  }else{
+    setIsLightAllowed(true);
   }
 }, [totalEnergyConsumption]);
 
@@ -80,16 +84,17 @@ useEffect(() => {
 }, [isMachineAvailable]);
 
 useEffect(() => {
-  if (currentTime.getHours() >= 17 || currentTime.getHours <=5) {
+  if ((currentTime.getHours() >= 17 || currentTime.getHours <=5) && isLightAllowed) {
     // Turn on the light between 17 pm - 5 am
     dispatch(increaseTotalEnergyConsumption(2/3600));
     if(!isLightOpen){
       setIsLightOpen(true);
+      console.log("executes");
     }
   }else{
     setIsLightOpen(false); // turn off the light
   }
-}, [currentTime, isLightOpen, dispatch]);
+}, [currentTime, isLightOpen, isLightAllowed, dispatch]);
 
   useEffect(()=>{
     // get temperaute change and     
