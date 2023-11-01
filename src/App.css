@@ -176,5 +176,10 @@
 
   }
 
+  .fillProducts{
+    width: 100%;
+    font-size: 0.5rem;
+  }
+
   /* Adjust other specific styles for small screens */
 }
