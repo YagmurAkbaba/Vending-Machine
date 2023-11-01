@@ -1,38 +1,167 @@
-.App {
+.vending-machine-container {
+  width: 98%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 20vw auto 15vw 15vw;
+  grid-template-rows: 5vh 60vh 30vh;
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.vending-machine-header {
+  color: white;
+  grid-column:1 / 6;
+  grid-row: 1;
   text-align: center;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border: 1px black solid;
+  border-radius: 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.products {
+  grid-column: 1 / 4;
+  grid-row: 2;
+  background-color: #C8E9E9;
+  display: grid;
+  grid-template-columns: auto auto auto 5vw 10vw;
+  gap: 3rem;
+  align-items: center;
+  border: 1px black solid;  
+  border-radius: 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.operations {
+  background-color:#939799;
+  grid-column: 4 / 6;
+  grid-row: 2 / 4 ;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 30vh 30vh 20vh;
+  border-radius: 1.5rem;
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.moneyOperations{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows:  20% 70% auto;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* border: 1px black solid;   */
+  border-radius: 1.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.safe {
+  grid-column: 1 / 4;
+  grid-row: 3;
+  background-color: #939799;
+  border-radius: 1.5rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1rem 4rem;
+  justify-content: space-between;
+}
+
+.buttons{
   color: white;
+  text-align: center;
+  height: 2rem;
+  border-radius: 1.5rem;  
+  font-size: 0.7rem;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+.cancelButton{
+  background-color: red;
+  border: 0.1rem darkred solid;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.changeButton{
+  background-color: lightgreen;
+  border: 0.1rem green solid;
+  color: green;
+  
+}
+
+.totalChangeButton{
+  background-color: green;
+  border: 0.1rem darkgreen solid;
+  
+}
+
+.openButton {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 1.5rem;
+  height: 5rem;
+  border-radius: 1.5rem;  
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+.moneys{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0.5rem;
+}
+
+.insert-money {
+  font-weight: bold;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 3px black solid;  
+  border-radius: 1.5rem;
+  background-color: black;
+  color: white;
+  margin: 5%;
+}
+
+.change-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 1px black solid;  
+  /* border-radius: 1.5rem; */
+  margin-top: 1rem;
+  font-weight: bold;
+  height: 12rem; 
+}
+
+.secure-money{
+  visibility: none;
+}
+
+.fillProducts {
+  background-color: lightgreen;
+  border-radius: 1.5rem;
+  border: 1px darkgreen solid;
+  margin: 0.5rem;
+  align-self: flex-end;
+  /* position: relative;
+  z-index: 1;
+  bottom:3rem;
+  left:20rem; */
+}
+
+.lightbulb{
+  /* margin: 0.1rem 0.5rem 0 0; */
+  height: 2rem;
+}
+
+.item-container {
+  width: 100%;
 }
