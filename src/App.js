@@ -89,7 +89,7 @@ useEffect(() => {
   }else{
     setIsLightOpen(false); // turn off the light
   }
-}, [currentTime]);
+}, [currentTime, isLightOpen, dispatch]);
 
   useEffect(()=>{
     // get temperaute change and     
@@ -98,14 +98,14 @@ useEffect(() => {
         setInterval(() => dispatch(increaseTotalEnergyConsumption(2)), 1000);
         console.log(totalEnergyConsumption);
       }
-  }, [temperature])
+  }, [temperature, totalEnergyConsumption, dispatch]);
 
   useEffect(()=>{
     // user and machine interaction can last 5 min at most
     if(isInProgress){
       setTimeout(()=> dispatch(cancelRequest()), 300000);
     }
-  }, [isInProgress]);
+  }, [isInProgress,dispatch]);
 
   // vending machine
   return (
