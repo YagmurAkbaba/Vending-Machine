@@ -27,6 +27,8 @@ function App() {
   const [isLightOpen, setIsLightOpen] = useState(false);
   const [isLightAllowed, setIsLightAllowed] = useState(true);
 
+  const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+
 useEffect(() => {
   if(totalEnergyConsumption>5){ // if energy consumption exceeds 5, turn of the light 
     setIsLightOpen(false);
@@ -59,7 +61,7 @@ useEffect(() => {
 const fetchData = async () => {  
   try {
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=dc6e198d710d27211ed68a445d1bb01e`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`
     );
     const data = await response.json();
     const temperatureInCelsius = data.main.temp - 273.15; // convert to celcius
